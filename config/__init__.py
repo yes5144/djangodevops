@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import absolute_import
 
-__all__ = ['celery_app', 'RUN_VER', 'APP_CODE', 'SECRET_KEY', 'BK_URL', 'BASE_DIR']
+__all__ = [
+    'celery_app', 'RUN_VER', 'APP_CODE', 'SECRET_KEY', 'BK_URL', 'BASE_DIR'
+]
 
 import os
 
@@ -17,11 +19,10 @@ def get_env_or_raise(key):
     """
     value = os.environ.get(key)
     if not value:
-        raise RuntimeError(
-            ('Environment variable "{}" not found, you must set this variable to run this application.'
-             ' See http://docs.open.oa.com/topics/faq_for_developing#36-本地开发时报错-environment-variable-x-not-found-怎么办'
-             ).format(key)
-        )
+        raise RuntimeError((
+            'Environment variable "{}" not found, you must set this variable to run this application.'
+            ' See http://docs.open.oa.com/topics/faq_for_developing#36-本地开发时报错-environment-variable-x-not-found-怎么办'
+        ).format(key))
     return value
 
 
@@ -34,8 +35,7 @@ SECRET_KEY = '371403e0-cfc6-4da5-8396-0535e14dc07e'
 # SaaS运行版本，如非必要请勿修改
 RUN_VER = 'open'
 # 蓝鲸SaaS平台URL，例如 http://paas.bking.com
-BK_URL = "http://paas.yes5144.com"
+BK_URL = "https://paas-class.bktencent.com:443"
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(
-    __file__)))
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
