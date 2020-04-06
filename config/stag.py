@@ -21,7 +21,8 @@ RUN_MODE = 'STAGING'
 DATABASES.update({
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '123123djangodevops',  # 数据库名 'USER': '',  # 数据库用户
+        'NAME': '123123djangodevops',  # 数据库名 
+        'USER': 'djangouser',  # 数据库用户
         'PASSWORD': '123123',  # 数据库密码
         'HOST': '10.0.2.8',  # 数据库主机
         'PORT': '3306',  # 数据库端口
