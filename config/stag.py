@@ -21,10 +21,10 @@ RUN_MODE = 'STAGING'
 DATABASES.update({
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': '123123_djangodevops',  # 数据库名 
-        'USER': 'djangouser',  # 数据库用户
-        'PASSWORD': '123123',  # 数据库密码
-        'HOST': '10.0.2.8',  # 数据库主机
-        'PORT': '3306',  # 数据库端口
+        'NAME': os.environ.get('BKAPP_stag_dbname'),  # 数据库名 
+        'USER': os.environ.get('BKAPP_stag_dbuser'),  # 数据库用户
+        'PASSWORD': os.environ.get('BKAPP_stag_pass'),  # 数据库密码
+        'HOST': os.environ.get('BKAPP_stag_dbhost'),  # 数据库主机
+        'PORT': os.environ.get('BKAPP_stag_dbport'),  # 数据库端口
     },
 })
