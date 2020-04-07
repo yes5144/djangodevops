@@ -18,19 +18,15 @@ LOG_LEVEL = 'ERROR'
 # import logging
 # logging.getLogger('app').setLevel('INFO')
 
-
 # 正式环境数据库可以在这里配置
 
-DATABASES.update(
-    {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'djangodevops_prod',  # 数据库名
-            'USER': 'root',  # 数据库用户
-            'PASSWORD': 'channel',  # 数据库密码
-            'HOST': '192.168.204.222',  # 数据库主机
-            'PORT': '3306',  # 数据库端口
-        },
-    }
-)
-
+DATABASES.update({
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('BKAPP_prod_dbname'),  # 数据库名 
+        'USER': os.environ.get('BKAPP_prod_dbuser'),  # 数据库用户
+        'PASSWORD': os.environ.get('BKAPP_prod_dbpass'),  # 数据库密码
+        'HOST': os.environ.get('BKAPP_prod_dbhost'),  # 数据库主机
+        'PORT': os.environ.get('BKAPP_prod_dbport'),  # 数据库端口
+    },
+})
