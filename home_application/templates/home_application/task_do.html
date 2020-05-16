@@ -60,8 +60,8 @@
                     </div>
                     <div class="collapse navbar-collapse navbar-responsive-collapse" id="king-horizontal-nav2-collapse">
                         <ul class="nav navbar-nav">
-                            <li class="king-navbar-active "><a href="javascript:void(0);">执行任务</a></li>
-                            <li><a href="javascript:void(0);">任务记录</a></li>
+                            <li class="king-navbar-active "><a href="{{ SITE_URL }}tasks">执行任务</a></li>
+                            <li><a href="{{ SITE_URL }}record">任务记录</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
                             <li>
@@ -99,9 +99,9 @@
                                             <label class="col-sm-4 control-label bk-lh30 pt0">选择脚本：</label>
                                             <div class="col-sm-8">
                                                 <select name="" id="" class="form-control bk-valign-top">
-                                                    <option value="脚本1">脚本1</option>
-                                                    <option value="脚本2">脚本2</option>
-                                                    <option value="脚本3">脚本3</option>
+                                                    {% for task in tasks %}
+                                                    <option value={{ task.id }}>{{ task.scriptname }}</option>
+                                                    {% endfor %}
                                                 </select>
                                             </div>
                                         </div>

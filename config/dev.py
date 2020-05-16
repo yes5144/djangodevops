@@ -26,12 +26,14 @@ DEBUG = True
 # SQL: CREATE DATABASE `framework_py` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci; # noqa: E501
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': APP_CODE,
-        'USER': 'root',
-        'PASSWORD': 'channel',
-        'HOST': '192.168.204.222',
-        'PORT': '3306',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': APP_CODE,
+        # 'USER': 'root',
+        # 'PASSWORD': 'channel',
+        # 'HOST': '192.168.204.222',
+        # 'PORT': '3306',
     },
 }
 
